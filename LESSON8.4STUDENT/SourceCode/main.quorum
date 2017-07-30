@@ -1,0 +1,53 @@
+//Lesson 8.4 UltrasonicSensor 2017 Student Code
+//New solution robot 7/29/2017 now updated and cleaned up ... 
+use Libraries.Robots.Lego.Motor
+use Libraries.Robots.Lego.Screen
+use Libraries.Robots.Lego.Sound
+use Libraries.Robots.Lego.Button
+use Libraries.Robots.Lego.TouchSensor
+use Libraries.Robots.Lego.UltrasonicSensor
+//instantiate actions
+Motor motor
+Screen screen
+Sound sound
+Button button
+TouchSensor touchSensor
+UltrasonicSensor ultrasonicSensor
+//set sensor ports 
+ultrasonicSensor:SetPort(2) 
+touchSensor:SetPort(4)
+// A few variables
+integer speed=64
+integer leftspeed=speed
+integer rightspeed=speed
+integer volume=16
+integer y =1
+//output to screen 
+    screen:OutputCenterLarge("BAT ", 3)
+
+//set button fuctions
+repeat until touchSensor:IsPressed()
+    sound:SetVolume(volume)     
+    sound:PlayTone(330, 125)
+    sound:PlayTone(410, 125) 
+    button:SetLightPattern(7)
+end //end of button fuctions repeat loop
+screen:Clear()//delay after user presses center to let go of robot (3 seconds)
+sound:SetVolume(volume) 
+sound:PlayTone(220, 1000)
+sound:PlayTone(110, 1000) //the delay is now over
+repeat until touchSensor:IsPressed()//check if to touch sensor is pressed 
+// This is you will write your code
+
+
+
+
+
+//This is where you will end your code
+    end  
+end //End of repeat until touchSensor2:IsPressed() Upward Sensor
+motor:Stop("B")
+motor:Stop("C")
+sound:PlayTone(440, 2000)
+//The End
+
